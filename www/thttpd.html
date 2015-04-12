@@ -1,0 +1,736 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0036)http://www.acme.com/software/thttpd/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="./thttpd_files/styles.css">
+    <title>thttpd</title>
+  <style type="text/css"></style><script async="" src="./thttpd_files/analytics.js"></script><script></script><script></script><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+  <body>
+
+    <center><div align="center"><table border="5" cellpadding="5" cellspacing="5"><tbody><tr>
+      <td bgcolor="#33cc33">
+	<a href="http://www.acme.com/donate/"><b>Donate $5 to help support ACME Labs.</b></a>
+      </td>
+      <td bgcolor="#33cc33">
+	<a href="http://www.acme.com/software/thttpd/repo.html"><b>Attack of the Repo Men!</b></a>
+      </td>
+    </tr></tbody></table></div></center>
+
+    <img class="logo" width="111" height="64" src="./thttpd_files/anvil_thttpd.gif" alt="anvil">
+    <h3>thttpd - tiny/turbo/throttling HTTP server</h3>
+
+    <a href="http://www.acme.com/software/thttpd/thttpd-2.26.tar.gz">Fetch the software.</a> <a href="http://www.acme.com/software/thttpd/#releasenotes">Release notes.</a>
+
+    <br clear="all">
+    <img class="logo" width="160" height="58" src="./thttpd_files/ipv6-ready.gif" alt="IPv6">
+
+    <p>
+      thttpd is a simple, small, portable, fast, and secure HTTP server.
+    </p>
+
+    <dl>
+      <dt> Simple: </dt>
+      <dd>
+	It handles only the minimum necessary to implement HTTP/1.1.
+        Well, maybe a little more than the minimum.
+      </dd>
+      <dt> Small: </dt>
+      <dd>
+	See the <a href="http://www.acme.com/software/thttpd/benchmarks.html">comparison chart</a>.
+        It also has a very small run-time size, since it does not fork and
+        is very careful about memory allocation.
+      </dd>
+      <dt> Portable: </dt>
+      <dd>
+	It compiles cleanly on most any Unix-like OS, specifically including
+        FreeBSD, SunOS 4, Solaris 2, BSD/OS, Linux, OSF.
+      </dd>
+      <dt> Fast: </dt>
+      <dd>
+	In typical use it's about as fast as the best full-featured servers
+        (Apache, NCSA, Netscape).
+        Under extreme load it's much faster.
+      </dd>
+      <dt> Secure: </dt>
+      <dd>
+	It goes to great lengths to protect the web server machine against
+        attacks and breakins from other sites.
+      </dd>
+    </dl>
+
+    <p>
+      It also has one extremely useful feature
+      (<a href="http://www.acme.com/software/thttpd/thttpd_man.html#THROTTLING">URL-traffic-based throttling</a>)
+      that no other server currently has.
+      Plus, it supports
+      <a href="http://www.ipv6.org/">IPv6</a>
+      out of the box, no patching required.
+    </p>
+
+    <hr>
+
+    <p>
+      More specific info:
+    </p>
+    <ul>
+      <li> <a href="http://www.acme.com/software/thttpd/thttpd_man.html">HTMLized man page</a> </li>
+      <li> <a href="http://www.acme.com/software/thttpd/notes.html">thttpd notes</a> </li>
+      <li> <a href="http://www.acme.com/software/thttpd/options.html">options guide</a> </li>
+      <li> <a href="http://www.acme.com/software/thttpd/auxprogs.html">auxiliary programs</a> </li>
+      <li> <a href="http://www.acme.com/software/thttpd/benchmarks.html">web server comparisons</a> </li>
+      <!-- <li> <a href="http://www.sveasoft.com/pages/downloads/files/thttpd-win-2.07-beta-0.4.zip">a Windows port of thttpd 2.07</a> </li> -->
+      <li> <a href="http://www.acme.com/software/thttpd/web.html">other web resources</a> </li>
+    </ul>
+
+    <hr>
+
+    <img class="logo" width="140" height="132" src="./thttpd_files/bill.gif" alt="Bill">
+
+    <p>
+      How do you pronounce thttpd?  Ask Bloom County's Bill the Cat, as seen in
+      <a href="http://ars.userfriendly.org/cartoons/?id=19990926&mode=classic">User Friendly</a>,
+      the excellent geek-positive comic.
+      <a href="http://www.acme.com/software/thttpd/logos/"><img align="left" width="155" height="66" border="0" src="./thttpd_files/thttpd_powered_1.gif" alt="thttpd powered"></a>
+      You can also use this fun Bill-based thttpd badge on your own web site
+      if you like.
+      It was drawn by Anatole Shaw.
+    </p>
+
+    <br clear="all">
+
+    <hr>
+
+    <p>
+      Are you using thttpd?
+      There's a mailing list:
+      <a href="mailto:thttpd@mail.acme.com">thttpd@mail.acme.com</a>
+      (<a href="mailto:thttpd-request@mail.acme.com">thttpd-request@mail.acme.com</a>
+      to subscribe,
+      <a href="http://marc.theaimsgroup.com/?l=thttpd&r=1&w=2">archived here</a>).
+      And an announcements-only mailing list:
+      <a href="mailto:thttpd-announce@mail.acme.com">thttpd-announce@mail.acme.com</a>
+      (<a href="mailto:thttpd-announce-request@mail.acme.com">thttpd-announce-request@mail.acme.com</a>
+      to subscribe).
+      Anything sent to the announcements list also goes to the regular list,
+      so you don't need to be on both.
+    </p>
+
+    <p>
+      Also if you have any nice quotes I can use, send 'em in.
+      For instance:
+    </p>
+
+    <blockquote><i>
+      "I got thttpd compiled and running on the web server at work in no time
+      at all, or close enough for my purposes, and I really like it, and when I
+      told the rest of the crew what the footprint was they almost coughed up
+      their lunches."
+      </i><blockquote>
+        -- Martin Kelly
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "Our load averages have dropped significantly since we moved our
+      graphics to thttpd."
+      </i><blockquote>
+        -- Randy Cosby
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "i just grabbed thttpd and set it up on my personal box to test it out,
+      and i am amazed at how quick and easy that was.
+      i'm a hardcore apache expert but this was just phenomenally simple.
+      very refreshing."
+      </i><blockquote>
+        -- Jon Drukman
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "I switched to thttpd on my underpowered server about 20 minutes after
+      downloading it."
+      </i><blockquote>
+        -- Daniel Quinlan
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "I just wanted to let you know that I installed thttpd
+      and it works really great.
+      The server is a P3/500 w/512 megs running FreeBSD 3.3 and when it
+      was using apache it was at about 11 load average and kept throwing connections
+      and errors.
+      Now it runs dandy with thttpd and the load average is between 0.1 and 0.2.
+      The thttpd process is at about 200 megs size and the system is usually 60% idle.
+      The machine serves about 400 simultaneous connections (more on peak hours)."
+      </i><blockquote>
+        -- Petru Paler
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "I just upgraded my htdocs development box from apache to thttpd.
+      I was looking for a httpd that would use less memory - I found
+      one that was faster and easier to use as well :)"
+      </i><blockquote>
+        -- David Brownlee
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "We are using thttpd to serve all of our images.
+      We are a huge traffic site.
+      We moved about a month ago from a barebones apache.
+      The load on our web servers dropped dramatically, as did the memory usage!
+      woohoo!"
+      </i><blockquote>
+        -- Jeremy Brand
+    </blockquote></blockquote>
+
+    <blockquote><i>
+      "Configuration: Athlon 700, 800MB RAM.
+      Before: Apache, load=170, machine unusable, capped at 4Mbits, SWAPPING.
+      After: thttpd, load=.09 (yes, that's point-zero-nine), happy at 8Mbits, only
+      using ~300MB of RAM."
+      </i><blockquote>
+        -- Jon Oringer
+    </blockquote></blockquote>
+
+    <p>
+      Some major sites that are running or have run thttpd:
+    </p>
+
+    <ul>
+      <li> <a href="http://www.demon.net/">demon.net</a>, Demon Internet, a large UK ISP </li>
+      <li> <a href="http://www.global.net.uk/">global.net.uk</a>, Global Internet, another large UK ISP </li>
+      <li> <a href="http://www.bluelight.com/">bluelight.com</a>, Kmart's web site </li>
+      <li> <a href="http://img.gamespot.com/">img.gamespot.com</a>, GameSpot's image server </li>
+      <li> <a href="http://download.napster.com/">download.napster.com</a>, Napster's download server </li>
+      <li> <a href="http://www.stephenking.com/">stephenking.com</a>, Stephen King's official site </li>
+      <li> <a href="http://www.mtv.com/">mtv.com</a>, It's not TV, it's eMpTV. </li>
+      <li> <a href="http://news.excite.com/">news.excite.com</a>, one of Excite's internal servers </li>
+      <li> <a href="http://www.valueclick.com/">valueclick.com</a>, a banner ad broker </li>
+      <li> <a href="http://www.sealandgov.com/">sealandgov.com</a>, The Sovereign Principality of Sealand </li>
+      <li> <a href="http://www.drudgereport.com/">The Drudge Report</a> </li>
+      <li> <a href="http://www.garfield.com/">garfield.com</a>, the comic strip </li>
+      <li> <a href="http://images.paypal.com/">images.paypal.com</a> </li>
+    </ul>
+
+    <hr>
+
+    <p>
+      On Red Hat Linux systems you can use RPM to install thttpd, like so:
+    </p>
+
+    <blockquote><pre><code>
+    cd /usr/src/redhat/SOURCES
+    wget http://www.acme.com/software/thttpd/thttpd-2.25b.tar.gz
+    rpm -ta thttpd-2.25b.tar.gz
+    rpm -i /usr/src/redhat/RPMS/i386/thttpd-2.25b-1.i386.rpm
+    </code></pre></blockquote>
+
+    <hr>
+
+    <a name="releasenotes"></a>
+
+    <!--
+    <p>
+      New in version 2.27:
+    </p>
+    <ul>
+      <li> ??? </li>
+    </ul>
+    -->
+
+    <p>
+      New in version 2.26:
+    </p>
+    <ul>
+      <li> Ignore ECONNABORTED on accept(). </li>
+      <li> Correctly implemented the config-file option change from "nosymlink" to "nosymlinkcheck", which was supposedly done in version 2.24.  </li>
+      <li> Removed mailto: link from default index page. </li>
+      <li> Allow CGIs to provide both Location and Status headers. (A. Skrobov) </li>
+      <li> Better logic for figuring out CGI SERVER_NAME environment variable. (Oleg) </li>
+      <li> Updated for clang, and general cleanup. </li>
+    </ul>
+
+    <p>
+      New in version 2.25b:
+    </p>
+    <ul>
+      <li> Move fdwatch initialization before the chroot, so that /dev/poll can work. </li>
+      <li> Multiple fdwatch cleanups and fixes (Adam Zell). </li>
+    </ul>
+
+    <p>
+      New in version 2.25:
+    </p>
+    <ul>
+      <li> Prohibit "Host: ." and "Host: .." (David Leadbeater). </li>
+      <li> Don't free memory prematurely on SIGUSR1 (A.D.F.). </li>
+      <li> Use the specified charset in directory listings and errors (Jonas Ohlsson). </li>
+      <li> Lowered THROTTLE_TIME from 60 seconds to 2 seconds, plus more aggressive computation of sending rate, to improve throttle reaction time (E Frank Ball). </li>
+      <li> Added code to redistribute the throttled bandwidth fairly among the currently sending connections. </li>
+      <li> Some more throttling changes that smooth things out a lot. </li>
+      <li> Added an experimental limitation on the number of simultaneous CGIs. </li>
+      <li> Chown the log file when starting as root, so that it can later be re-opened when running as nobody (or whatever user you configure).  Also tweak the logfile pathname so that it still works inside a chroot tree. </li>
+      <li> Make sure URL paths begin with a slash. </li>
+      <li> Generate multiple MIME encodings in the correct order, and with the correct separator. </li>
+      <li> Ignore EINTR on read() and write(). </li>
+      <li> Fix error in httpd_read_fully() and httpd_write_fully() that could cause incorrect data to be read or written (Daniel Jensen). </li>
+      <li> Don't attempt to double-free a file descriptor if a connection times out while it is paused for throttling. </li>
+      <li> Save and restore errno in signal handlers. </li>
+      <li> The non-local referer check is no longer fooled by URLs with query strings. </li>
+      <li> Simplified handling of HAVE_INT64T (Trisk).  If this causes problems, e.g. if there are still systems which don't have "long long", we can back out the change. </li>
+      <li> Keep a list of free connection structs, instead of doing linear search to find a free one (Adam Zell). </li>
+      <li> Added config.h option FLUSH_LOG_EVERY_TIME - if it's turned off, the log does not get fflushed after each request (Adam Zell). </li>
+      <li> Multiple robustness improvements to the fdwatch module (Adam Zell). </li>
+      <li> Added /dev/poll support to fdwatch (Adam Zell). </li>
+      <li> Automatically add no-cache control header on error responses. </li>
+    </ul>
+
+    <p>
+      New in version 2.24:
+    </p>
+    <ul>
+      <li> Added a bunch of MIME types. </li>
+      <li> Fix minor problem with returning unknown protocol on some errors. </li>
+      <li> Changed the config-file option for diabling symlink checking from "nosymlink" to "nosymlinkcheck" to make its function clearer. </li>
+      <li> Allow blank lines in the config file. </li>
+      <li> Handle more than one SIGHUP and SIGUSR2 (Cameron Gregory). </li>
+      <li> Slight change to handle_newconnect() to better deal with unexpected errors from accept(), such as running out of file descriptors (Alex Keahan). </li>
+      <li> Added optional minimum rate to throttles. </li>
+      <li> Stats syslog messages downgraded from LOG_NOTICE to LOG_INFO. </li>
+      <li> Use unsigned short consistently for port number. </li>
+      <li> Prohibit slashes in the Host: header (Marcus Breiing). </li>
+      <li> Added a -dd data_dir flag and corresponding config-file option. </li>
+      <li> Got rid of the old timer-based zombie process reaper, replacing it with a SIGCHLD handler. </li>
+      <li> Changed the idle connection checking from using a separate timer for each connection to using a single timer that checks all active connections. </li>
+      <li> Correction to missing-slash directory redirect with query string. </li>
+      <li> Added a watchdog alarm handler that forces a core dump if thttpd stops running its timers for too long. </li>
+      <li> Don't send Content-Length header on 304 Not Modified responses. </li>
+      <li> Allow user-agent log entries to be up to 200 characters long, instead only of 80. </li>
+      <li> Fixed buffer overflow bug in defang(). </li>
+      <li> Re-arranged the order of calling de_dotdot() so that it doesn't get applied to query strings. </li>
+      <li> Some fixes for the syslogtocern script (paul fox). </li>
+      <li> Changed configure script to use "gcc -dumpversion" instead of "gcc --version" (Ed Goforth). </li>
+      <li> Changed most uses of \r and \n to \015 and \012 (Jens Bauer). </li>
+      <li> In ssi.c, lack of PATH_INFO is now non-fatal (David Phillips). </li>
+      <li> Some improvements to fdwatch (David Burgess). </li>
+    </ul>
+
+    <p>
+      New in version 2.23:
+    </p>
+    <ul>
+      <li> Added some Microsoft MIME types (Kevin Day). </li>
+      <li> Switch htpasswd from using tmpnam to mkstemp. </li>
+      <li> Use memmove instead of memcpy. </li>
+      <li> Fix to de_dotdot (Mark Dunlap). </li>
+      <li> Corrected some uses of size_t and off_t. </li>
+      <li> Rewrote figure_mime() to do binary search.  If you're updating an existing installation, you'll need to do a <code>./configure ; make clean ; make</code>. </li>
+      <li> Removed the x- from gzip and compress in mime_encodings.txt. </li>
+      <li> Added rudimentary option to set cache-control headers. </li>
+      <li> Simplified the IPv6 ifdefs. </li>
+      <li> Allow filenames with ? in them (Cameron Gregory). </li>
+      <li> Some improvements to the mmap cache - added a "panic mode" if you run out of address space, added DESIRED_MAX_MAPPED_BYTES config.h option. </li>
+      <li> Lowered OCCASIONAL_TIME from five minutes to two minutes. </li>
+      <li> Added include of config.h in mmc.c (A.D.F.). </li>
+      <li> Fixed compile nit in syslog.c (Peter Harris). </li>
+      <li> Added configure test for int64_t. </li>
+      <li> Fix CGI variable AUTH_TYPE (Alexandre CHERIF). </li>
+      <li> Slight correction to SIGUSR1 handling. </li>
+      <li> Split clear_connection() into two routines, one which sends a possible buffered response and the other which ignores such (David Burgess). </li>
+      <li> Remove /./ in de_dotdot() (Dana Dahlstrom). </li>
+      <li> Shortened LINGER_TIME from two seconds to half a second. </li>
+      <li> Changed some write() calls to httpd_write_fully(), as suggested by Neale Pickett. </li>
+      <li> Changed the non-mmap() read() call in mmc.c to httpd_read_fully(), as suggested by Cameron Gregory. </li>
+      <li> Added .xhtml and .xht to mime_types.txt (suggested by Dave Hodder). </li>
+      <li> Added index.xhtml and index.xht to INDEX_NAMES (suggested by Dave Hodder). </li>
+      <li> Fix to error messages for CGI. </li>
+      <li> Got rid of the custom-jiggered syslog.c, now we just use the standard system version.  Also added a paragraph in the man page about the syslogd flags needed to make syslogging work from inside a chroot tree. </li>
+      <li> Fixed problem involving a connection going into lingering-close mode multiple times (Cameron Gregory). </li>
+      <li> Added a bunch of checks to the fdwatch package to make it more robust. </li>
+      <li> Added some more checks for timers getting over-written. </li>
+      <li> On generated pages which set BGCOLOR, also set TEXT LINK and VLINK. </li>
+      <li> Added some OpenOffice MIME types (Dave Hodder). </li>
+      <li> Fix to kqueue code (Alexey Dokuchaev, Michal Suszycki, qhwt@myrealbox.com). </li>
+    </ul>
+
+    <p>
+      New in version 2.22:
+    </p>
+    <ul>
+      <li> Fix for the garbage characters after POST data hack. </li>
+      <li> Fix for poll() problem. </li>
+      <li> Some fixes for unusual cases in the CGI file-descriptor shuffling (Michael Gorlick). </li>
+      <li> Lowered the default DESIRED_MAX_MAPPED_FILES from 2000 to 1000. </li>
+      <li> On SysV use sigset() instead of signal() (David Koblas). </li>
+      <li> Set up accept filters after listen() (Kris Spinka). </li>
+      <li> Preserve query string when doing a missing-slash directory redirect. </li>
+      <li> Fixed off-by-one error on EWOULDBLOCK (Sascha Schumann). </li>
+      <li> Special-case logging to '-' as stdout (Matt Armstrong). </li>
+      <li> Fix to poll() error handling (Sascha Schumann). </li>
+      <li> Decreased memory use on kqueue() systems (Sascha Schumann). </li>
+      <li> Added -s to usage line (Pavel Janík). </li>
+      <li> Fix for security hole that exposed contents of .htpasswd in some cases (noticed by zeno@cgisecurity.com). </li>
+      <li> Allow (and ignore) extra fields in .htpasswd files. </li>
+      <li> Added some calls to shutdown() in strategic places. </li>
+      <li> Added a timer-kill of the CGI interpose input and output process.  These processes also now close the listen fd(s). </li>
+      <li> Fixed rare file descriptor leak, when we get an unknown sockaddr family (George Schlossnagle). </li>
+      <li> Zero the kqueue data structures in fdwatch before use (Jonathan Lemon). </li>
+      <li> Put virtual hostname in non-local referer syslog (Craig Leres). </li>
+      <li> Added a P3P server privacy header setting (Henrik Schack Jensen). </li>
+    </ul>
+
+    <p>
+      New in version 2.21b:
+    </p>
+    <ul>
+      <li> Fix for lingering-close problem from Taner Halicioglu - on some systems, it was hanging the server. </li>
+    </ul>
+
+    <p>
+      New in version 2.21:
+    </p>
+    <ul>
+      <li> ANSI compile nits in timers.h and libhttpd.c.  I thought I had already fixed these. </li>
+      <li> Two small fixes to USR1 signal handling.  Should be more reliable now. </li>
+      <li> Fixed the "throttle sending count was negative" bug. </li>
+      <li> 503 Service Overloaded errors were not getting logged. </li>
+      <li> New throttling syslogs. </li>
+      <li> Tuning tweaks to throttling, it's much more accurate now. </li>
+      <li> Tweak to the sample log-rotation script. </li>
+      <li> Allow trailing whitespace on the HTTP request line - it violates the HTTP/1.1 spec, but it's harmless, and at least one client (TiVo's v1.3 http_get [not related to my own http_get]) generates it. </li>
+      <li> Changed the capitalization on some HTTP headers we generate, to interoperate with a client (yes, the same one) that is too stoopid to do case-insensitive matching. </li>
+      <li> Pass Accept-Language headers to CGIs. </li>
+      <li> Make log entries at the end of a connection instead of the beginning, so that the byte count is correct. </li>
+      <li> Off-by-one error in base-64 decoding (Archie Cobbs). </li>
+      <li> Updated man page throttling section for the wildcard change in 2.17. </li>
+      <li> Couple of fixes for top-level redirection, from KIKUCHI Takahiro. </li>
+      <li> New option to hide thttpd's version, from Paul Fox. </li>
+      <li> Changed include of &lt;sys/time.h&gt; to &lt;time.h&gt;. </li>
+      <li> Fixed cross-site scripting bug relating to the built-in error pages. </li>
+      <li> Changed the mmap cache to use ctime instead of mtime, to better handle permissions changes. </li>
+      <li> VHOST_DIRLEVELS patch, from Vadim Belman. </li>
+      <li> ssi missing-header bugfix, from Marcel Telka. </li>
+      <li> Hack to deal with garbage characters after POST data generated by some browsers. </li>
+      <li> Added -g global passwd file option, suggested by Craig Leres. </li>
+      <li> Robustness and performance improvements for mmap cache, from Evan Jones. </li>
+      <li> kqueue support, from Niels Provos. </li>
+      <li> If both select and poll are available, always use poll. </li>
+      <li> Don't syslog "Connection reset by peer" errors. </li>
+      <li> If the logfile is "/dev/null", don't bother logging at all. </li>
+      <li> The mmap cache now tries to keep the total number of maps below a configurable parameter.  See <a href="http://www.acme.com/software/thttpd/options.html#DESIRED_MAX_MAPPED_FILES">DESIRED_MAX_MAPPED_FILES</a>. </li>
+      <li> Fix for garbled packets causing needless 400 errors, from John Salmon. </li>
+      <li> Improved some status-checking and error-reporting. </li>
+      <li> Redid the debugging stats syslog messages, and made them show up on a SIGUSR2 as well as by timer. </li>
+      <li> Use accept filtering if available. </li>
+    </ul>
+
+    <p>
+      New in version 2.20c:
+    </p>
+    <ul>
+      <li> Off-by-one error in base-64 decoding (Archie Cobbs). </li>
+    </ul>
+
+    <p>
+      New in version 2.20b:
+    </p>
+    <ul>
+      <li> Corrected version of Marcel Telka's ssi fix.  My bad. </li>
+    </ul>
+
+    <p>
+      New in version 2.20:
+    </p>
+    <ul>
+      <li> Performance improvements to the timer package via hashing, and double-linking / sorting the lists.  Partially based on a suggestion by Michal Ostrowski. </li>
+      <li> Performance improvement to the mmap cache package, from Evan Jones. </li>
+      <li> Minor Linux fix for open files limit, from Jordan Ritter. </li>
+      <li> Fix for null ClientData, which picky compilers didn't like. </li>
+      <li> Unknown sockaddr type becomes a non-fatal error, preventing a DOS attack. </li>
+      <li> Close extraneous file descriptors on CGI calls, from Russell Dill. </li>
+      <li> Security fixes for the external ssi program, from ghandi@dopesquad.net and Wolfgang Rupprecht. </li>
+      <li> Fix to make the ssi program elide the HTML comment sequence, from Marcel Telka. </li>
+      <li> Red Hat packaging updates from Bennett Todd. </li>
+      <li> Throttling fix from Tom Pavel. </li>
+    </ul>
+
+    <p>
+      New in version 2.19:
+    </p>
+    <ul>
+      <li> Added hack to prevent MSIE 5 from censoring error messages. </li>
+      <li> Minor fix to handling of shouldn't-happen error in ls(). </li>
+      <li> IPv6/Linux fix from Tero Pelander. </li>
+      <li> Documented the -D flag. </li>
+    </ul>
+
+    <p>
+      New in version 2.18:
+    </p>
+    <ul>
+      <li> Fixed URL-encoding of high-bit characters - used in directory listings. </li>
+      <li> Made a few more characters come through verbatim instead of %-encoded. </li>
+      <li> Couple of minor code cleanups. </li>
+      <li> Added some MIME types to support WAP/WML. </li>
+      <li> IPv6 fix. </li>
+      <li> Made MIME text character-set an option, with iso-8859-1 the default. </li>
+    </ul>
+
+    <p>
+      New in version 2.17:
+    </p>
+    <ul>
+      <li> A change in the way wildcard matching works - now a single * only matches strings that don't include a slash.  To match entire pathnames including slashes you have to use **. </li>
+      <li> On systems with IPv6, automatically bind to both v4 and v6 sockets. </li>
+      <li> Slight change to non-local referer checking to handle older browsers. </li>
+      <li> Tweaks to some of the error-403 syslog messages. </li>
+      <li> Portability tweak for OSF/1. </li>
+      <li> Portability tweak for IPv6 systems. </li>
+      <li> Fix for ssi.c from Marcel Telka. </li>
+      <li> Added charset=iso-8859-1 to text MIME types. </li>
+      <li> Added wildcards to redirect. </li>
+      <li> Changed symlinks/nosymlinks config options to symlink/nosymlink, to conform to the man page (old style still accepted). </li>
+    </ul>
+
+    <p>
+      New in version 2.16:
+    </p>
+    <ul>
+      <li> More explicit error pages for 403 Forbidden. </li>
+      <li> New section in the manual page explaining how thttpd is picky about file permissions. </li>
+      <li> Couple of CGI tweaks from David Chaiken. </li>
+    </ul>
+
+    <p>
+      New in version 2.15:
+    </p>
+    <ul>
+      <li> Use standard isxdigit macro instead of is_hexit routine. </li>
+      <li> Portability fix for Debian, which lacks gai_strerror(). </li>
+      <li> Fix for .htpasswd authorization, broken by 2.14's custom error pages change. </li>
+    </ul>
+
+    <p>
+      New in version 2.14:
+    </p>
+    <ul>
+      <li> Fix to non-local referer code - it was trying to dereference a null pointer under some circumstances. </li>
+      <li> Fix to If-Modified-Since - some leap year problems. </li>
+      <li> Rewrote match() - it was using a whole lot of CPU time for patterns with lots of |'s, such as those used by the new non-local-referer filtering. </li>
+      <li> Fix to host lookup code for -h flag. </li>
+      <li> Fix custom error pages to work with 401 Unauthorized. </li>
+      <li> Removed unused variable. </li>
+    </ul>
+
+    <p>
+      New in version 2.13:
+    </p>
+    <ul>
+      <li> Portability fix for fdwatch on systems with poll() but not select(). </li>
+      <li> Renamed nph-redirect to redirect, now that thttpd does header parsing. </li>
+      <li> Always chdir to / after a chroot. </li>
+      <li> Some minor de-linting changes. </li>
+      <li> Revived code that closes stdin/stdout/stderr, after adding a fix in the CGI code to prevent descriptors from getting screwed up. </li>
+      <li> Bugfix for CGI header parsing - if the CGI was sending binary data (e.g. images), the result could get truncated or corrupted. </li>
+      <li> Disallow ".." listing of virtual host directory. </li>
+      <li> Revised snprintf portability fix. </li>
+      <li> Rearranged the hc initialization so it's all in one place. </li>
+      <li> New IPv6 code from KIKUCHI Takahiro. </li>
+      <li> New non-local referer filtering code from Craig Leres. </li>
+      <li> New custom error pages code from Catalin Ionescu. </li>
+    </ul>
+
+    <p>
+      New in version 2.12:
+    </p>
+    <ul>
+      <li> Better heuristic for deciding between select() and poll(). </li>
+      <li> Added Red Hat RPM spec file. </li>
+    </ul>
+
+    <p>
+      New in version 2.11:
+    </p>
+    <ul>
+      <li> Use poll() instead of select() when favorable. </li>
+      <li> Do lazy allocation of part of the connection data structure, to save on memory now that we can have thousands of simultaneous connections. </li>
+      <li> Some speed optimizations. </li>
+      <li> Added HTTP_HOST to CGI environment. </li>
+      <li> Bugfix for rare uninitialized variable. </li>
+    </ul>
+
+    <p>
+      New in version 2.10:
+    </p>
+    <ul>
+      <li> Bugfix for CGI header parsing. </li>
+      <li> Call setlogin() if it's available. </li>
+    </ul>
+
+    <p>
+      New in version 2.09:
+    </p>
+    <ul>
+      <li> Never do lingering-close on CGI calls - this fixes the problems some people noticed with large amounts of CGI POST data. </li>
+      <li> Better portability fix for numeric timezone. </li>
+      <li> CGI header parsing. </li>
+    </ul>
+
+    <p>
+      New in version 2.08:
+    </p>
+    <ul>
+      <li> Connection read buffers are allocated on demand, lowering typical memory use by a megabyte or so. </li>
+      <li> Handle zero-length files better on weird systems. </li>
+      <li> URI-encoding of weird characters in index generation. </li>
+      <li> Enhancements to periodic stats log message. </li>
+    </ul>
+
+    <p>
+      New in version 2.07:
+    </p>
+    <ul>
+      <li> Added CGI_LD_LIBRARY_PATH config option. </li>
+      <li> Solaris portability fix for numeric timezone change. </li>
+      <li> Virtual hostnames get pounded to lower case before getting looked up. </li>
+      <li> Fix for TILDE_MAP_2 non-existent directories. </li>
+      <li> Fix for throttling problem seen on high-traffic sites. </li>
+      <li> Added option to defeat explicit symlink checking. </li>
+    </ul>
+
+    <p>
+      New in version 2.06:
+    </p>
+    <ul>
+      <li> Portability fix for machines which don't have snprintf(). </li>
+      <li> Bugfix for generated index pages. </li>
+      <li> Change order of chroot initialization so that pidfile works. </li>
+      <li> Change order of signal initialization so that we don't get a startup HUP. </li>
+      <li> Use numeric timezones in log file. </li>
+      <li> When vhosting, prepend hostname in log entry. </li>
+      <li> Minor install fix. </li>
+      <li> Added AUTH_TYPE CGI variable. </li>
+      <li> Fix to TILDE_MAP_2. </li>
+      <li> Optional multi-level vhost directory indexing. </li>
+    </ul>
+
+    <p>
+      New in version 2.05:
+    </p>
+    <ul>
+      <li> New el-cheapo virtual hosting feature. </li>
+      <li> Assorted bug fixes - non-anchored wildcard matching, truncated CGI output, throttling, authorization cache, daemonization, date-header parsing. </li>
+      <li> Option to write pid to a file, re-open log file on SIGHUP. </li>
+      <li> Now looks for index files from a list, instead of only index.html. </li>
+      <li> Simple config file. </li>
+    </ul>
+
+    <p>
+      New in version 2.04:
+    </p>
+    <ul>
+      <li> The simple mmap cache added in version 2.01 is now more aggressive, improving performance when a small set of files gets fetched a whole lot. </li>
+      <li> Fixed bug in filename translation. </li>
+    </ul>
+
+    <p>
+      New in version 2.03:
+    </p>
+    <ul>
+      <li> Fix for CGI, broken on Linux by the close-on-exec hack in 2.01. </li>
+      <li> Do a setgroups() when root to give up supplementary groups as well as primary group. </li>
+    </ul>
+
+    <p>
+      New in version 2.02:
+    </p>
+    <ul>
+      <li> SunOS 4 compile fix. </li>
+      <li> Fix for occasional SEGV when reading too-large requests. </li>
+    </ul>
+
+    <p>
+      New in version 2.01:
+    </p>
+    <ul>
+      <li> Mmap cache to improve performance on multiple large downloads. </li>
+      <li> 40% CGI performance improvement via the close-on-exec flag. </li>
+      <li> Minor optimization to the timers package, no visible effect on performance. </li>
+      <li> Send response headers and first load of data as a single packet instead of two packets, which seems to save a network roundtrip time, drastically improving latency. </li>
+      <li> CGI programs may now be mode 711 (execute-only). </li>
+      <li> Some fixes to 'make install'. </li>
+    </ul>
+
+    <p>
+      New in version 2.00:
+    </p>
+    <ul>
+      <li> No more 5-second initial read timeout. </li>
+      <li> Faster handling of initial connections. </li>
+      <li> Periodic stats syslog message. </li>
+      <li> Optional logging to a file instead of syslog. </li>
+      <li> Misc performance improvements. </li>
+    </ul>
+
+    <p>
+      New in version 1.95:
+    </p>
+    <ul>
+      <li> HTTP/1.1 support. </li>
+      <li> Basic authentication. </li>
+      <li> Byte-range serving. </li>
+      <li> New config options: <a href="http://www.acme.com/software/thttpd/options.html#GENERATE_INDEXES">GENERATE_INDEXES</a>, <a href="http://www.acme.com/software/thttpd/options.html#LOG_UNKNOWN_HEADERS">LOG_UNKNOWN_HEADERS</a>. </li>
+      <li> Bug fixes. </li>
+    </ul>
+
+    <p>
+      New in version 1.90a:
+    </p>
+    <ul>
+      <li> If-modified-since. </li>
+      <li> POST. </li>
+      <li> Auto-configure. </li>
+      <li> Combined log format. </li>
+    </ul>
+
+    <hr class="thick">
+
+    <a href="http://validator.w3.org/check?uri=referer"><img class="logo" width="88" height="31" border="0" src="./thttpd_files/valid-html401-gold.png" alt="valid HTML"></a>
+
+    <p>
+      See also:
+      <a href="http://www.acme.com/software/micro_httpd/">micro_httpd</a>,
+      <a href="http://www.acme.com/software/js_httpd/">js_httpd</a>,
+      <a href="http://www.acme.com/software/mini_httpd/">mini_httpd</a>,
+      <a href="http://www.acme.com/java/software/Acme.Serve.Serve.html">Acme.Serve</a>,
+      <a href="http://www.acme.com/software/http_get/">http_get</a>.<br>
+      <a href="http://www.acme.com/">ACME Labs</a> / <a href="http://www.acme.com/software/">Software</a> / thttpd<br>
+      <a href="http://www.acme.com/mailto/?id=wa"><img class="mailto" src="./thttpd_files/wa.gif" alt="email"></a>
+    </p>
+
+<!-- Spam traps. -->
+<br><div style=" visibility: hidden;"><font size="-3">
+<a href="mailto:frobozz07@mail.acme.com">frobozz07@mail.acme.com</a>
+<a href="mailto:plover42@mail.acme.com">plover42@mail.acme.com</a>
+<a href="mailto:plugh4711@mail.acme.com">plugh4711@mail.acme.com</a>
+<a href="mailto:xyzzy23@mail.acme.com">xyzzy23@mail.acme.com</a>
+</font></div>
+
+  
+
+
+</body></html>
